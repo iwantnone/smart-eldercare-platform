@@ -15,7 +15,7 @@ public class ElderlyProfile {
   private Long elderlyId;
   private Long userId;
   private String elderlyName;
-  private Long age;
+  private Integer age;
   private String gender;
   private String maritalStatus;
   private String elderlyPhone;
@@ -28,5 +28,5 @@ public class ElderlyProfile {
   private java.sql.Timestamp createdAt;
   private Long updatedBy;
   private java.sql.Timestamp updatedAt;
-
+  private String identityCards;
 }
