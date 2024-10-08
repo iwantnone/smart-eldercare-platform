@@ -7,15 +7,35 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      children: [
+        // 老人管理
+        {
+          path: '/user/elderly',
+          name: 'elderly',
+          component: () => import('../views/user/ElderlyManagerView.vue')
+        },
+        // 家属管理
+        {
+          path: '/user/family',
+          name: 'family',
+          component: () => import('../views/user/FamilyManagerView.vue')
+        },
+        // 用户管理
+        {
+          path: '/system/user',
+          name: 'user',
+          component: () => import('../views/system/UserManagerView.vue')
+        }
+      ]
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/login',
+      name: 'login',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/LoginView.vue')
     }
   ]
 })
